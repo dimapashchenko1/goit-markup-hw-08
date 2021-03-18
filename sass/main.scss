@@ -1,0 +1,16 @@
+@import "./base/normalize";
+@import "./utils/variables";
+
+@import "./components/common/common";
+@import "./components/common/header";
+@import "./components/common/footer";
+
+@import "./components/studio/hero";
+@import "./components/studio/modal";
+@import "./components/studio/features";
+@import "./components/studio/passion";
+@import "./components/studio/team";
+@import "./components/studio/clients";
+
+@import "./components/portfolio/menu";
+@import "./components/portfolio/project";
