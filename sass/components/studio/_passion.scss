@@ -1,6 +1,12 @@
 .passion {
+    display: none;
     padding-bottom: 94px;
+
+    @media (min-width: $desktop) {
+        display: block;
+    }
 }
+
 
 .passion__title {
     font-style: normal;

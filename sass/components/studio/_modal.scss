@@ -1,5 +1,5 @@
 .backdrop.is-hidden {
-    opacity: 0;
+    opacity: 1;
     pointer-events: none;
     visibility: hidden;
     transition: var(--transition-function);
@@ -26,8 +26,8 @@
     top: 50%;
     left: 50%;
   
-    width: 528px;
-    min-height: 581px;
+    width: 450px;
+    min-height: 609px;
     padding: 40px;
       
     border-radius: 4px;
@@ -38,6 +38,11 @@
 
     transform: translate(-50%, -50%) scale(1);
     transition: var(--transition-function);
+
+    @media (min-width: $desktop) {
+        width: 528px;
+        min-height: 581px;
+      }
 }
   
 .is-hidden .hero-modal {
@@ -111,15 +116,21 @@
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
-    font-size: 14px;
-    line-height: calc(24/14);
+    font-size: 12px;
+    line-height: calc(14/12);
     letter-spacing: 0.03em;
     color: var(--grey-text);
 
     margin-left: 7px;
+
+    @media (min-width: $desktop) {
+        font-size: 14px;
+        line-height: calc(24/14);    
+    }
 }
 
 .checkbox__link {
+    display: inline-block;
     text-decoration: underline;
     color: var(--accent-text);
     
@@ -179,7 +190,7 @@
 }
 
 .order--check {
-    margin: 20px 0 30px 12px;
+    margin: 20px 0 30px 0px;
 }
 
 .checkbox {

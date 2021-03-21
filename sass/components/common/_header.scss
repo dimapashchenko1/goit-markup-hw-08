@@ -7,24 +7,41 @@
     top: 0;
     left: 0;
     width: 100%;
-    min-height: 80px;
+    min-height: 60px;
     border-bottom: 1px solid;
     border-color: var(--grey-border);
     
+    @media (min-width: $tablet) {
+        min-height: 80px;
+    }
 }
 
-.site-header__nav,
-.site-menu,
-.site-contact {
+.site-header__nav {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+
+.site-menu {
+    display: none;
+    justify-content: flex-start;
+    align-items: center;
+
+    @media (min-width: $tablet) and (max-width: $desktop) {
+        display: flex;
+    }
+    @media (min-width: $desktop) {
+        display: flex;
+    }
+
+}
+
+
     
 }
 .logo {
     
-    padding-top: 24px;
-    padding-bottom: 24px;
+    padding-top: 16px;
+    padding-bottom: 16px;
 
     font-family: 'Raleway', sans-serif;
     font-style: normal;
@@ -33,6 +50,17 @@
     line-height: 1.19;
     letter-spacing: 0.03em;
     color: var(--black-text-logo);
+
+    @media (min-width: $tablet) {
+        padding-top: 26px;
+        padding-bottom: 26px;
+    }
+
+    @media (min-width: $desktop) {
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
+
 }
 
 .logotip {
@@ -71,11 +99,15 @@
     margin-right: 50px;
 }
 
+.site-menu__link {
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
 .site-menu__link,
 .site-contact__link {
     display: block;
-    padding-top: 32px;
-    padding-bottom: 32px;
+    
     font-family: Roboto;
     font-style: normal;
     font-weight: 500;
@@ -94,18 +126,36 @@
 }
 
 
+
 .site-contact {
     box-sizing: content-box;
-    margin-left: 305px;
+    margin-left: 84px;
+    display: none;
+    @media (min-width: $tablet) and (max-width: $desktop) {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    @media (min-width: $desktop) {
+        display: flex;
+        margin-left: 305px;
+    }
 }
 
 .site-contact__item {
-    display: inline-flex;
-    justify-content: center;
+    display: flex;
+    justify-content: start;
     align-items: center;
 
 &:first-child {
-    margin-right: 30px;
+    
+    @media (min-width: $tablet) and (max-width: $desktop) {
+        margin-bottom: 10px;
+}
+    @media (min-width: $desktop) {
+        margin-right: 30px;
+    }
 }
 }
 
@@ -121,11 +171,6 @@
 }
 }
 
-.site-contact {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
- } 
 
 
 
