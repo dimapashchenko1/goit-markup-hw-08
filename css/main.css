@@ -432,13 +432,15 @@ main {
 }
 
 /* Container */
-.container {
-  max-width: 480px;
-  min-width: 320px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: auto;
-  margin-right: auto;
+@media (min-width: 320px) {
+  .container {
+    max-width: 480px;
+    min-width: 320px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @media (min-width: 768px) {
@@ -484,6 +486,14 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media (max-width: 768px) {
+  .site-header__nav {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
 }
 
 .site-header__nav .site-menu {
@@ -673,6 +683,149 @@ main {
   fill: var(--accent-text);
   margin-right: 10px;
   fill: currentColor;
+}
+
+.menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 48px 83px 48px 40px;
+  z-index: 101;
+  background-color: var(--white-text);
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  -webkit-transition: var(--transition-function);
+  transition: var(--transition-function);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.menu-container.is-open {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: var(--transition-function);
+  transition: var(--transition-function);
+}
+
+.menu-container .menu-toggle {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  color: #fff;
+}
+
+.menu-toggle {
+  min-height: 40px;
+  min-width: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.menu-toggle:hover, .menu-toggle:focus {
+  fill: var(--accent-text);
+  -webkit-transition: var(--transition-function);
+  transition: var(--transition-function);
+}
+
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+.mobile-menu__list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.mobile-menu .link {
+  display: block;
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.mobile-social__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.mobile-menu__link {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.175;
+  letter-spacing: 0.02em;
+  color: var(--black-text);
+  margin-bottom: 32px;
+}
+
+.mobile-menu__link--current {
+  color: var(--blue-text);
+}
+
+.mobile-contact__link--tel {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 1.176;
+  letter-spacing: 0.02em;
+  color: var(--accent-text);
+  margin-bottom: 32px;
+}
+
+.mobile-contact__link--mail {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.666;
+  letter-spacing: 0.02em;
+  color: var(--grey-text);
+  margin-bottom: 64px;
+}
+
+.mobile-social__item {
+  padding-right: 10px;
+  border-right: 1px solid rgba(33, 33, 33, 0.2);
+  margin-right: 10px;
+}
+
+.mobile-social__link {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.222;
+  letter-spacing: 0.02em;
+  color: var(--accent-text);
 }
 
 /* Стили Футера */
@@ -905,7 +1058,7 @@ main {
   font-family: inherit;
   font-size: 100%;
   line-height: 1.15;
-  width: 450px;
+  width: 100%;
   height: 50px;
   padding: 15px 16px;
   margin-bottom: 20px;
@@ -926,7 +1079,7 @@ main {
 
 @media (min-width: 768px) and (max-width: 1200px) {
   .form__input {
-    max-width: 450px;
+    width: 450px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1708,8 +1861,7 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: calc(-1 * var(--list-gap));
-  margin-left: calc(-1 * var(--list-gap));
+  margin: -15px;
 }
 
 @media (max-width: 1200px) {
@@ -1720,21 +1872,19 @@ main {
 }
 
 .clients__item {
-  margin-top: var(--list-gap);
-  margin-left: var(--list-gap);
+  margin: 15px;
+  width: calc((100% - 60px) / 2);
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .clients__item {
-    -ms-flex-preferred-size: calc((100% - 60px) / 2);
-        flex-basis: calc((100% - 60px) / 2);
+    width: calc((100% - 90px) / 3);
   }
 }
 
-@media (min-width: 768px) and (max-width: 1200px) {
+@media (min-width: 1200px) {
   .clients__item {
-    -ms-flex-preferred-size: calc((100% - 90px) / 3);
-        flex-basis: calc((100% - 90px) / 3);
+    width: calc((100% - 180px) / 6);
   }
 }
 
@@ -1748,7 +1898,7 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 210px;
+  max-width: 210px;
   height: 90px;
   color: var(--clients-svg-color);
   border-radius: 4px;
@@ -1759,13 +1909,13 @@ main {
 
 @media (min-width: 768px) and (max-width: 1200px) {
   .clients__link {
-    width: 226px;
+    max-width: 226px;
   }
 }
 
 @media (min-width: 1200px) {
   .clients__link {
-    width: 170px;
+    max-width: 170px;
   }
 }
 
@@ -1905,6 +2055,7 @@ main {
 
 @media (min-width: 1200px) {
   .project-list__item {
+    max-width: 370px;
     -ms-flex-preferred-size: calc(100% / 3 - var(--list-gap));
         flex-basis: calc(100% / 3 - var(--list-gap));
     margin-left: var(--list-gap);
@@ -1914,12 +2065,6 @@ main {
 
 .project-list__item:not(:last-child) {
   margin-bottom: 30px;
-}
-
-@media (min-width: 1200px) {
-  .project-list__item {
-    max-width: 370px;
-  }
 }
 
 .project-list__item:hover, .project-list__item:focus {
