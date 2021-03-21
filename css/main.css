@@ -1741,7 +1741,7 @@ main {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .team__item:not(:last-child) {
     margin-bottom: 30px;
   }
