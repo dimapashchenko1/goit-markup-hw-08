@@ -24,6 +24,12 @@
                     <li class="site-contact__item"><a href="tel:+380961111111" class="site-contact__link"><svg class="site-contact__svg" width="10" height="16"><use href="./images/icons.svg#phone"></use>
                     </svg>+38 096 111 11 11</a></li>
                 </ul>
+
+                <button class="menu-toggle js-open-menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <svg width="24" height="16"> 
+                        <use class="menu-toggle__icon" href="./images/icons.svg#menu"></use>
+                    </svg>
+                </button>
             </nav>
         </div>
     </header>
@@ -313,6 +319,7 @@
             </ul>
             </div>
         </section>
+        <!--===Клиенты===-->
         <section class="clients">
             <div class="clients__container container">
                 <h2 class="clients__title">Постоянные клиенты</h2>
@@ -438,6 +445,50 @@
         </div>
     </footer>
 
+
+        
+
+        <div class="menu-container js-menu-container" id="mobile-menu">
+
+            <button class="menu-toggle js-close-menu">
+                <svg width="18.67" height="18.67">
+                    <use class="menu-toggle__icon" href="./images/icons.svg#close-menu"></use>
+                </svg>
+            </button>
+
+            <ul class="mobile-menu__list">
+                <li class="mobile-menu__item"><a href="./index.html" class="mobile-menu__link mobile-menu__link--current">Студия</a></li>
+                <li class="mobile-menu__item"><a href="./portfolio.html" class="mobile-menu__link">Портфолио</a></li>
+                <li class="mobile-menu__item"><a href="" class="mobile-menu__link">Контакты</a></li>
+            </ul>
+
+            <div class="mobile-contact__menu">
+                
+                <ul class="mobile-contact__list">
+                    <li class="mobile-contact__item"><a href="tel:+380961111111" class="mobile-contact__link--tel">+38 096 111 11 11</a></li>
+                    <li class="mobile-contact__item"><a href="mailto:info@devstudio.com" class="mobile-contact__link--mail">info@devstudio.com</a></li>
+                </ul>
+    
+                <ul class="mobile-social__list">
+                    <li class="mobile-social__item">
+                        <a class="mobile-social__link" href="">Instagram</a>
+                    </li>
+                    <li class="mobile-social__item">
+                        <a class="mobile-social__link" href="">Twitter</a>
+                    </li>
+                    <li class="mobile-social__item">
+                        <a class="mobile-social__link" href="">Facebook</a>
+                    </li>
+                    <li class="mobile-social__item">
+                        <a class="mobile-social__link" href="">LinkedIn</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+
+
     <div class="backdrop is-hidden" data-modal>
         <div class="backdrop-modal">
             <button class="modal-close__button" type="button" data-modal-close>
@@ -518,5 +569,6 @@
         document.body.style.paddingTop = '${pageHeaderHeight}px';
     </script> -->
     <script src="./js/modal.js"></script>
+    <script src="./js/menu.js"></script>
 </body>
 </html>
