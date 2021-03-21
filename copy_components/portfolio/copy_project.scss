@@ -1,0 +1,108 @@
+.project-list {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(-1 * var(--list-gap));
+    margin-top: calc(-1 * var(--list-gap));
+    
+}
+
+.project-list__item {
+    max-width: 370px;
+    flex-basis: calc(100% / 3 - var(--list-gap));
+    margin-left: var(--list-gap);
+    margin-top: var(--list-gap);
+    border: 1px solid;
+    border-color: var(--grey-border);
+    transition: var(--transition-function);
+
+&:hover,
+&:focus {
+    transition: var(--transition-function);
+    box-shadow:
+    0px 1px 1px rgba(0, 0, 0, 0.12),
+    0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+&:hover .project-overlay,
+&:focus .project-overlay {
+    opacity: 1;
+    transform: translateY(0);
+    z-index: 2;
+    transition: var(--transition-function);
+}
+}
+
+.project__image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.project-content {
+    padding: 20px 24px;
+}
+
+.project-content__title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.06em;
+
+    margin: 0px;
+    padding: 0px;
+    margin-bottom: 4px;
+    color: var(--black-text);
+}
+
+.project-content__text {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 1.88;
+    letter-spacing: 0.03em;
+    color: var(--grey-text);
+}
+
+.project__thumb {
+    position: relative;
+    overflow: hidden;
+
+}
+.project-overlay {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 1.56;
+    letter-spacing: 0.03em;
+    background: var(--overlflow-function);
+
+    position: absolute;
+    display: inline-block;
+    
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: 63px 24px;
+
+    opacity: 1;
+    transition: var(--transition-function);
+    transform: translateY(101%);
+    z-index: 1;
+}
+
+.project-overlay__text {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 1.56;
+    letter-spacing: 0.03em;
+    color: var(--white-text);  
+}
