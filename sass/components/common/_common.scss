@@ -64,19 +64,21 @@ main {
 
 /* Container */
 .container {
+
+    @media (min-width: 320px) {
     max-width: 480px;
     min-width: 320px;
     padding-left: 15px;
     padding-right: 15px;
     margin-left: auto;
     margin-right: auto;
+    }
     
-
     @media (min-width: $tablet) {
         max-width: 768px;
-      }
+    }
     
     @media (min-width: $desktop) {
-      max-width: 1200px;
+        max-width: 1200px;
     }
 }

@@ -17,9 +17,16 @@
 }
 
 .site-header__nav {
+
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    
+
+    @media (max-width: $tablet) {
+        justify-content: space-between;
+
+}
 
 .site-menu {
     display: none;

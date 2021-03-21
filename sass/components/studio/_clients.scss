@@ -27,8 +27,7 @@
 
 .clients__list {
     display: flex;
-    margin-top: calc(-1 * var(--list-gap));
-    margin-left: calc(-1 * var(--list-gap));
+    margin: -15px;
 
     @media (max-width: $desktop) {
         flex-wrap: wrap;
@@ -36,16 +35,14 @@
 }
   
 .clients__item {
-    margin-top: var(--list-gap);
-    margin-left: var(--list-gap);
-
-    @media (max-width: $tablet) {
-        flex-basis: calc((100% - 60px) / 2);
-    }
-
-    @media (min-width: $tablet) and (max-width: $desktop) {
-        flex-basis: calc((100% - 90px) / 3);
-    }
+    margin: 15px;
+	width: calc((100% - 60px) / 2);
+	@media (min-width: 768px) {
+		width: calc((100% - 90px) / 3);
+	}
+	@media (min-width: 1200px){
+		width: calc((100% - 180px) / 6);
+	}
     
 }
 
@@ -54,7 +51,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 210px;
+    max-width: 210px;
     height: 90px;
   
     color: var(--clients-svg-color);
@@ -64,11 +61,11 @@
     transition: var(--transition-function);
     
     @media (min-width: $tablet) and (max-width: $desktop) {
-        width: 226px;
+        max-width: 226px;
     }
     
     @media (min-width: $desktop) {
-        width: 170px;
+        max-width: 170px;
     }
 
 &:hover,

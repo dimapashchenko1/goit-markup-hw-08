@@ -34,6 +34,7 @@
     }
     
     @media (min-width: $desktop) {
+        max-width: 370px;
         flex-basis: calc(100% / 3 - var(--list-gap));
         margin-left: var(--list-gap);
         margin-top: var(--list-gap);
@@ -41,10 +42,6 @@
 
     &:not(:last-child) {
         margin-bottom: 30px;
-    }
-
-    @media (min-width: $desktop) {
-        max-width: 370px;
     }
 
 &:hover,
