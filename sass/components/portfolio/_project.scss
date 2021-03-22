@@ -22,10 +22,16 @@
 
 .project-list__item {
     width: 450px;
-    
     border: 1px solid;
     border-color: var(--grey-border);
     transition: var(--transition-function);
+
+    @media (max-width: $tablet) {
+
+    &:not(:last-child) {
+        margin-bottom: 30px;
+    }
+}
 
     @media (min-width: $tablet) and (max-width: $desktop) {
         flex-basis: calc((100% - 60px) / 2);
@@ -40,9 +46,6 @@
         margin-top: var(--list-gap);
     }
 
-    &:not(:last-child) {
-        margin-bottom: 30px;
-    }
 
 &:hover,
 &:focus {

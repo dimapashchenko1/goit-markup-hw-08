@@ -41,6 +41,11 @@
 }
 
 .features__item {
+    @media (max-width: $tablet) {
+    &:not(:last-child) {
+        margin-bottom: 30px;
+    }
+    }
 
     @media (min-width: $tablet) and (max-width: $desktop) {
     flex-basis: calc((100% - 60px) / 2);
