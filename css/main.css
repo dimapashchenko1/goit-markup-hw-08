@@ -1984,10 +1984,6 @@ main {
   }
 }
 
-.filter__item:not(:last-child) {
-  margin-right: 8px;
-}
-
 .filter__button {
   background-color: var(--grey-team-background);
   font-style: normal;
